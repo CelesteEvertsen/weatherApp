@@ -1,5 +1,5 @@
 
-import Weather from './components/weather'
+import Weather from './components/Weather'
 
 const App = () => {
   return (
