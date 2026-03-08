@@ -55,9 +55,9 @@ const Weather = () => {
       const icon =
         allIcons[weatherData.current_weather.weathercode] || clear_icon;
       setWeather({
-        humidity: weatherData.hourly.relative_humidity_2m[0],
-        wind: weatherData.current_weather.windspeed,
-        temperature: weatherData.current_weather.temperature,
+        humidity:Math.floor(weatherData.hourly.relative_humidity_2m[0]),
+        wind: Math.floor(weatherData.current_weather.windspeed),
+        temperature:Math.floor(weatherData.current_weather.temperature),
         location: name,
         icon: icon,
       });
@@ -74,7 +74,7 @@ const Weather = () => {
   return (
     <div className="weather">
       <div className="searchbar">
-        <input ref={inputRef} type="text" placeholder="Search city..." />
+        <input ref={inputRef} onKeyDown={(e)=>{if(e.key === 'Enter') search(inputRef.current.value)}} type="text" placeholder="Search city..." />
         <img
           src={search_icon}
           alt="Search"
