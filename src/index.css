@@ -6,7 +6,6 @@
   font-family: "DM Sans", sans-serif;
 }
 .app {
-  border: 1px solid red;
   min-height: 100vh;
   display: grid;
   background: #e2d4ff;
